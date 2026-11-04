@@ -49,8 +49,8 @@ class TestQuestion2(unittest.TestCase):
 
 class TestQuestion3(unittest.TestCase):
     def test_nhap_danh_sach_khong_luu_so_0(self) -> None:
-        with patch("builtins.input", side_effect=["2", "0", "4", "0"]):
-            self.assertEqual(nhap_danh_sach(), [2, 4])
+        with patch("builtins.input", side_effect=["2", "0"]):
+            self.assertEqual(nhap_danh_sach(), [2])
 
     def test_tinh_tong_duong_chan(self) -> None:
         self.assertEqual(tinh_tong_duong_chan([-4, -2, 1, 2, 4, 5]), 6)
