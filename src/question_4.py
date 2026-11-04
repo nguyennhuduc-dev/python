@@ -46,8 +46,14 @@ def xoa_sach(kho_sach: KhoSach, ma_so: str) -> bool:
 
 
 def tim_sach(kho_sach: KhoSach, tu_khoa: str) -> KhoSach:
-    """Tìm sách theo mã hoặc tên sách, không phân biệt hoa/thường."""
+    """Tìm sách theo mã hoặc tên sách, không phân biệt hoa/thường.
+
+    Từ khóa rỗng trả về dictionary rỗng để tránh khớp toàn bộ kho sách.
+    """
     tu_khoa = tu_khoa.strip().casefold()
+    if not tu_khoa:
+        return {}
+
     return {
         ma_so: thong_tin.copy()
         for ma_so, thong_tin in kho_sach.items()
