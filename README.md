@@ -1,102 +1,144 @@
-\# Lời Giải Đề Thi Python Căn Bản
+# 🐍 Python Fundamentals
 
+**Kho lưu trữ bài tập, kiến thức và thực hành Python từ cơ bản đến nâng cao.**
 
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Tests](https://img.shields.io/badge/tests-unittest-2ea44f)](https://docs.python.org/3/library/unittest.html)
 
-Kho lưu trữ mã nguồn lời giải các bài tập lập trình Python cơ bản (Mã đề thi: 11301). Mã nguồn đã được tái cấu trúc theo chuẩn viết code sạch (Clean Code), bổ sung Type Hints và Docstrings.
+---
 
+## 📌 Giới thiệu
 
+Repository này lưu trữ quá trình học tập và thực hành Python. Nội dung bắt đầu từ các bài tập nền tảng, sau đó mở rộng sang tư duy giải quyết vấn đề, lập trình hướng đối tượng, kiểm thử và các dự án nhỏ.
 
-\## 📌 Danh sách các bài giải
+**Mục tiêu:**
+- Luyện tư duy thuật toán và kỹ năng phân tích bài toán.
+- Viết Python rõ ràng, dễ đọc và dễ bảo trì.
+- Thực hành chia chương trình thành hàm và module.
+- Làm quen với Type Hints, Docstrings và Unit Test.
+- Xây dựng nền tảng để học Backend, Data và AI/ML.
 
-\* \*\*Câu 1 (`question\_1.py`)\*\*: Kiểm tra miền giá trị, đếm chữ số lẻ, tính chuỗi phân số $S$.
+## 🗂️ Cấu trúc dự án
 
-\* \*\*Câu 2 (`question\_2.py`)\*\*: Phân tích chuỗi (đếm chữ hoa, kiểm tra đối xứng Palindrome, tổng chữ số).
+```text
+python/
+├── .github/
+│   └── workflows/
+│       └── tests.yml
+├── docs/
+│   └── learning-roadmap.md
+├── src/
+│   ├── __init__.py
+│   ├── question_1.py
+│   ├── question_2.py
+│   ├── question_3.py
+│   ├── question_4.py
+│   └── question_5.py
+├── tests/
+│   ├── __init__.py
+│   └── test_questions.py
+├── .gitignore
+└── README.md
+```
 
-\* \*\*Câu 3 (`question\_3.py`)\*\*: Thao tác dynamic mảng (List), lọc và tính tổng số dương chẵn, tìm tần suất phần tử.
+## 📚 Danh sách bài tập
 
-\* \*\*Câu 4 (`question\_4.py`)\*\*: Quản lý thông tin sách bằng cấu trúc Dictionary.
+| File | Nội dung | Kiến thức |
+|---|---|---|
+| `question_1.py` | Kiểm tra miền giá trị, đếm chữ số lẻ, tính tổng phân số | Vòng lặp, điều kiện, hàm |
+| `question_2.py` | Đếm chữ hoa, kiểm tra chuỗi đối xứng, tính tổng chữ số | String, slicing, comprehension |
+| `question_3.py` | Nhập và xử lý danh sách số nguyên | List, vòng lặp, xử lý dữ liệu |
+| `question_4.py` | Quản lý kho sách | Dictionary, kiểm tra dữ liệu |
+| `question_5.py` | Xây dựng lớp điện thoại | Class, Object, Constructor, phương thức |
 
-\* \*\*Câu 5 (`question\_5.py`)\*\*: Lập trình hướng đối tượng (OOP) thiết kế Class `DienThoai`.
+## ⚙️ Yêu cầu
 
+- Python 3.10 trở lên.
+- Git (nếu muốn clone repository).
+- Không cần cài thư viện bên ngoài cho các bài tập và bộ kiểm thử hiện tại.
 
+## 🚀 Cài đặt và chạy
 
-\## 🚀 Hướng dẫn chạy thử dự án
+### 1. Clone repository
 
-Chạy trực tiếp file script bằng lệnh:
+```bash
+git clone https://github.com/nguyennhuduc-dev/python.git
+cd python
+```
 
-&#x20; bash python src/question\_5.py 
+### 2. Chạy một bài tập
 
-\---
-
-
-
-\### BƯỚC 3: Tạo Repository trên Website GitHub
-
-
-
-1\. Truy cập vào trang web \[github.com](https://github.com) và đăng nhập tài khoản của bạn.
-
-2\. Ở góc trên bên phải, bấm vào biểu tượng dấu \*\*`+`\*\* \\(\\rightarrow\\) Chọn \*\*New repository\*\*.
-
-3\. Điền các thông tin sau:
-
-\* \*\*Repository name\*\*: `python-fundamentals-exam`
-
-\* \*\*Public/Private\*\*: Chọn \*\*Public\*\* để nhà tuyển dụng hoặc bạn bè có thể xem được.
-
-\* \*\*LƯU Ý QUAN TRỌNG\*\*: \*\*KHÔNG\*\* tích chọn vào các ô \*Add a README file\*, \*Add .gitignore\*, hoặc \*Choose a license\* (vì chúng ta đã tạo thủ công dưới máy rồi).
-
-4\. Bấm nút \*\*Create repository\*\* ở dưới cùng.
-
-5\. Trang web sẽ chuyển hướng và hiển thị một đường link có đuôi `.git` (Ví dụ: `https://github.comten-cua-ban/python-fundamentals-exam.git`). \*\*Hãy copy lại đường link này\*\*.
-
-
-
-\---
-
-
-
-\### BƯỚC 4: Chạy các lệnh Git để tải dự án lên mạng
-
-
-
-Quay lại cửa sổ \*\*PowerShell\*\* trên máy tính của bạn (đảm bảo bạn vẫn đang đứng ở thư mục `D:\\python-fundamentals-exam`), gõ tuần tự các lệnh sau:
-
-
+Windows PowerShell:
 
 ```powershell
+python src/question_1.py
+```
 
-\# 1. Khởi tạo Git cho thư mục dự án
+Thay `question_1.py` bằng file muốn chạy.
 
-git init
+### 3. Chạy toàn bộ Unit Test
 
+Đứng tại thư mục gốc repository:
 
+```bash
+python -m unittest discover -s tests -v
+```
 
-\# 2. Thêm tất cả các file đã chuẩn bị vào hàng đợi
+Bộ kiểm thử dùng `unittest` có sẵn trong Python nên không cần cài package. Cách chạy theo cơ chế test discovery được mô tả trong [tài liệu Python](https://docs.python.org/3/library/unittest.html#test-discovery).
 
-git add .
+## 🧪 Kiểm thử tự động
 
+Mỗi lần có thay đổi được đẩy lên GitHub, GitHub Actions sẽ chạy Unit Test trên Python 3.10, 3.11 và 3.12.
 
+Các bài kiểm thử tập trung vào:
+- Kết quả đúng với dữ liệu thông thường.
+- Dữ liệu biên và danh sách rỗng.
+- Dữ liệu không hợp lệ.
+- Mã sách trùng và thao tác xóa mã không tồn tại.
+- Giá trị hợp lệ khi khởi tạo đối tượng OOP.
 
-\# 3. Đóng gói mã nguồn kèm thông điệp ghi nhận lịch sử
+## 🧭 Lộ trình học tập
 
-git commit -m "feat: initial release with clean core solutions"
+Xem [Learning Roadmap](docs/learning-roadmap.md) để theo dõi các chủ đề dự kiến: Python Fundamentals, Data Structures, OOP, Advanced Python, Testing và Mini Projects.
 
+## 🧹 Quy ước viết code
 
+- Tên hàm và biến dùng `snake_case`.
+- Tên lớp dùng `PascalCase`.
+- Hàm quan trọng có Docstring.
+- Khai báo Type Hints khi giúp mã nguồn dễ hiểu hơn.
+- Tách phần xử lý nghiệp vụ khỏi phần nhập/xuất khi phù hợp.
+- Viết Unit Test cho các hàm có logic cần kiểm chứng.
 
-\# 4. Đổi tên nhánh mặc định thành 'main'
+Tham khảo [PEP 8](https://peps.python.org/pep-0008/) và [Python unittest](https://docs.python.org/3/library/unittest.html).
 
-git branch -M main
+## 🛠️ Công nghệ
 
+- **Language:** Python
+- **Testing:** unittest
+- **Automation:** GitHub Actions
+- **Version Control:** Git & GitHub
 
+## 📈 Định hướng phát triển
 
-\# 5. Liên kết thư mục dưới máy với kho lưu trữ trên GitHub (Thay link bạn vừa copy vào đây)
+- [x] Chuẩn hóa 5 bài tập hiện tại.
+- [x] Bổ sung kiểm tra dữ liệu và tài liệu hàm.
+- [x] Tạo bộ Unit Test.
+- [x] Thiết lập kiểm thử tự động.
+- [x] Viết lộ trình học tập.
+- [ ] Bổ sung bài tập về thuật toán và cấu trúc dữ liệu.
+- [ ] Phát triển mini project có dữ liệu thực tế.
+- [ ] Mở rộng nội dung OOP và Python nâng cao.
 
-git remote add origin https://github.comten-cua-ban/python-fundamentals-exam.git
+## 👨‍💻 Tác giả
 
+**Nguyễn Như Đức**  
+GitHub: [@nguyennhuduc-dev](https://github.com/nguyennhuduc-dev)
 
+---
 
-\# 6. Đẩy toàn bộ mã nguồn lên GitHub
+<div align="center">
 
-git push -u origin main
+*Learn consistently. Practice deliberately. Build something useful.*
 
+</div>
