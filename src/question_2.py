@@ -1,27 +1,38 @@
+"""Bài 2: Các thao tác xử lý chuỗi."""
+
+
 def dem_chu_hoa(s: str) -> int:
-    return sum(1 for char in s if char.isupper())
+    """Đếm số ký tự chữ hoa trong chuỗi."""
+    return sum(1 for ky_tu in s if ky_tu.isupper())
+
 
 def kiem_tra_doi_xung(s: str) -> bool:
-    return s == s[::-1]
+    """Kiểm tra chuỗi đối xứng, không phân biệt hoa/thường và dấu cách.
+
+    Các ký tự không phải chữ hoặc số được bỏ qua.
+    """
+    chuoi_chuan_hoa = "".join(
+        ky_tu.casefold() for ky_tu in s if ky_tu.isalnum()
+    )
+    return chuoi_chuan_hoa == chuoi_chuan_hoa[::-1]
 
 
 def tinh_tong_chu_so(s: str) -> int:
-    return sum(int(char) for char in s if char.isdigit())
+    """Tính tổng các chữ số thập phân xuất hiện trong chuỗi."""
+    return sum(int(ky_tu) for ky_tu in s if ky_tu.isdecimal())
+
 
 def main() -> None:
-    s = input("Nhập chuỗi s từ bàn phím: ")
-    so_chu_hoa = dem_chu_hoa(s)
-    if so_chu_hoa == 0:
-        print("Chuỗi không có ký tự chữ hoa.")
-    else:
-        print(f"Số ký tự chữ hoa: {so_chu_hoa}")
-    
-    if kiem_tra_doi_xung(s):
-        print("Chuỗi đối xứng.")
-    else:
-        print("Chuỗi không đối xứng.")
+    """Nhập chuỗi và hiển thị kết quả xử lý."""
+    s = input("Nhập chuỗi s: ")
 
+    so_chu_hoa = dem_chu_hoa(s)
+    print(f"Số ký tự chữ hoa: {so_chu_hoa}")
+
+    ket_qua = "đối xứng" if kiem_tra_doi_xung(s) else "không đối xứng"
+    print(f"Chuỗi {ket_qua}.")
     print(f"Tổng các chữ số trong chuỗi: {tinh_tong_chu_so(s)}")
+
 
 if __name__ == "__main__":
     main()
