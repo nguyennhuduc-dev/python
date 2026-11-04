@@ -2,10 +2,11 @@
 
 import unittest
 from datetime import datetime
+from unittest.mock import patch
 
 from src.question_1 import dem_le, kiem_tra_mien_gia_tri, tinh_tong
 from src.question_2 import dem_chu_hoa, kiem_tra_doi_xung, tinh_tong_chu_so
-from src.question_3 import dem_phan_tu_k, tinh_tong_duong_chan
+from src.question_3 import dem_phan_tu_k, nhap_danh_sach, tinh_tong_duong_chan
 from src.question_4 import KhoSach, them_sach, tim_sach, xoa_sach
 from src.question_5 import DienThoai
 
@@ -47,6 +48,10 @@ class TestQuestion2(unittest.TestCase):
 
 
 class TestQuestion3(unittest.TestCase):
+    def test_nhap_danh_sach_khong_luu_so_0(self) -> None:
+        with patch("builtins.input", side_effect=["2", "0", "4", "0"]):
+            self.assertEqual(nhap_danh_sach(), [2, 4])
+
     def test_tinh_tong_duong_chan(self) -> None:
         self.assertEqual(tinh_tong_duong_chan([-4, -2, 1, 2, 4, 5]), 6)
         self.assertEqual(tinh_tong_duong_chan([]), 0)
@@ -75,6 +80,10 @@ class TestQuestion4(unittest.TestCase):
         ket_qua = tim_sach(self.kho_sach, "python")
         self.assertIn("S001", ket_qua)
         self.assertEqual(ket_qua["S001"]["nam_xuat_ban"], 2024)
+
+    def test_tu_khoa_rong_khong_tra_ve_toan_bo(self) -> None:
+        self.them_sach_mau()
+        self.assertEqual(tim_sach(self.kho_sach, ""), {})
 
     def test_khong_cho_phep_ma_trung(self) -> None:
         self.them_sach_mau()
