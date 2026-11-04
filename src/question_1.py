@@ -44,7 +44,7 @@ def main() -> None:
             print("Vui lòng nhập một số nguyên hợp lệ.")
 
     print(f"Số chữ số lẻ của {n}: {dem_le(n)}")
-    print(f Giá trị S({n}): {tinh_tong(n):.4f}")
+    print(f"Giá trị S({n}): {tinh_tong(n):.4f}")
 
 
 if __name__ == "__main__":
